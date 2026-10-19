@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 832 264" width="832" height="264" role="img" aria-label="haul --list-scanners">
+<rect x="0.5" y="0.5" width="831" height="263" rx="12" fill="#0d0e11" stroke="#2a2d34"/>
+<path d="M0.5 40 L0.5 12.5 A12 12 0 0 1 12.5 0.5 L819.3 0.5 A12 12 0 0 1 831.3 12.5 L831.3 40 Z" fill="#15171c"/>
+<line x1="0" y1="40" x2="832" y2="40" stroke="#2a2d34"/>
+<circle cx="24" cy="20" r="6" fill="#55595f"/>
+<circle cx="46" cy="20" r="6" fill="#44484e"/>
+<circle cx="68" cy="20" r="6" fill="#33373d"/>
+<text x="416" y="25" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="12" fill="#8b9099">haul --list-scanners</text>
+<text y="70.0" xml:space="preserve" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="13"><tspan x="22.0" textLength="7.8" lengthAdjust="spacing" fill="#808080">$</tspan><tspan x="37.6" textLength="156.0" lengthAdjust="spacing" fill="#d4d6db" font-weight="700">haul --list-scanners</tspan></text>
+<text y="89.0" xml:space="preserve" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="13"><tspan x="22.0" textLength="631.8" lengthAdjust="spacing" fill="#d4d6db">ai-tools         Secrets in AI tool configs, chat history, and SQLite chat stores</tspan></text>
+<text y="108.0" xml:space="preserve" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="13"><tspan x="22.0" textLength="678.6" lengthAdjust="spacing" fill="#d4d6db">browsers         Presence of browser password/cookie stores (never opened or decrypted)</tspan></text>
+<text y="127.0" xml:space="preserve" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="13"><tspan x="22.0" textLength="756.6" lengthAdjust="spacing" fill="#d4d6db">cloud-cli        AWS/Azure/gcloud/kube/docker/registries/terraform/vault/netrc/gh/git credentials</tspan></text>
+<text y="146.0" xml:space="preserve" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="13"><tspan x="22.0" textLength="616.2" lengthAdjust="spacing" fill="#d4d6db">desktop-apps     FileZilla / WinSCP / RDP / OpenVPN stored-credential artifacts</tspan></text>
+<text y="165.0" xml:space="preserve" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="13"><tspan x="22.0" textLength="670.8" lengthAdjust="spacing" fill="#d4d6db">dotenv           .env files and project credential dotfiles, with git-exposure scoring</tspan></text>
+<text y="184.0" xml:space="preserve" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="13"><tspan x="22.0" textLength="569.4" lengthAdjust="spacing" fill="#d4d6db">env-vars         Secret-looking values in the current process environment</tspan></text>
+<text y="203.0" xml:space="preserve" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="13"><tspan x="22.0" textLength="717.6" lengthAdjust="spacing" fill="#d4d6db">sensitive-files  Key stores, certificates, wallets, password exports, and stray private keys</tspan></text>
+<text y="222.0" xml:space="preserve" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="13"><tspan x="22.0" textLength="569.4" lengthAdjust="spacing" fill="#d4d6db">shell            Shell rc files, PowerShell profiles, and command history</tspan></text>
+<text y="241.0" xml:space="preserve" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="13"><tspan x="22.0" textLength="787.8" lengthAdjust="spacing" fill="#d4d6db">ssh              SSH/PEM private keys in ~/.ssh and IdentityFile paths; flags keys with no passphrase</tspan></text>
+</svg>

@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Haul: credential exposure scanner for developer machines</title>
+  <meta name="description" content="Haul finds the API keys, tokens, SSH keys, .env files and AI-chat leaks (Claude Code, Cursor, Copilot) that infostealer malware would grab on your machine, and tells you how to fix each one. Read-only, zero network, zero dependencies.">
+  <meta name="keywords" content="credential scanner, secret scanning, secrets detection, infostealer, API key leak, SSH key, .env, AI coding assistant security, Claude Code, Cursor, Copilot, devsecops, SARIF, Windows">
+  <meta name="author" content="Arman Manteghi">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0b0d11">
+  <link rel="canonical" href="https://arman-manteghi.github.io/Haul/">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/sealed.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Haul">
+  <meta property="og:title" content="Haul: what would an infostealer find on your machine?">
+  <meta property="og:description" content="A read-only credential exposure scanner for developer machines. Finds exposed keys, tokens and AI-chat leaks, without ever reading a secret out.">
+  <meta property="og:url" content="https://arman-manteghi.github.io/Haul/">
+  <meta property="og:image" content="https://arman-manteghi.github.io/Haul/assets/social-preview.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta property="og:image:alt" content="Haul: what would an infostealer find on your machine?">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Haul: what would an infostealer find on your machine?">
+  <meta name="twitter:description" content="Read-only credential exposure scanner. Zero network, zero dependencies.">
+  <meta name="twitter:image" content="https://arman-manteghi.github.io/Haul/assets/social-preview.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Haul",
+    "alternateName": "haul-scanner",
+    "description": "Read-only credential exposure scanner that finds the API keys, tokens, SSH keys, .env files and AI-chat leaks an infostealer would grab on a developer machine, without ever reading a secret out.",
+    "applicationCategory": "SecurityApplication",
+    "operatingSystem": "Windows, Linux",
+    "softwareVersion": "0.2.0",
+    "url": "https://arman-manteghi.github.io/Haul/",
+    "downloadUrl": "https://pypi.org/project/haul-scanner/",
+    "installUrl": "https://pypi.org/project/haul-scanner/",
+    "softwareRequirements": "Python 3.11 or newer",
+    "image": "https://arman-manteghi.github.io/Haul/assets/social-preview.png",
+    "license": "https://github.com/Arman-Manteghi/Haul/blob/main/LICENSE",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Person", "name": "Arman Manteghi", "url": "https://github.com/Arman-Manteghi" },
+    "sameAs": ["https://github.com/Arman-Manteghi/Haul", "https://pypi.org/project/haul-scanner/"]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0b0d11; --surface: #11151c; --tile: #141922; --line: #232a34; --line-2: #313a46;
+      --text: #e4e7ec; --text-2: #a2abb6; --text-3: #6c7581;
+      --steel: #7f9cbf; --teal: #6e9d96; --sand: #a9996a; --copper: #b48a60; --plum: #9686b1; --brick: #b46560;
+      --mono: ui-monospace, SFMono-Regular, "Cascadia Mono", Menlo, Consolas, "Liberation Mono", monospace;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 var(--sans);
+      background-image: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(127, 156, 191, 0.14), transparent 70%);
+    }
+    a { color: var(--steel); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+    nav .brand { font: 700 15px var(--mono); letter-spacing: 3px; color: var(--text); }
+    nav .links a { color: var(--text-2); margin-left: 22px; font-size: 14px; }
+    header.hero { text-align: center; padding: 28px 0 40px; }
+    header.hero img.banner { width: 100%; max-width: 920px; height: auto; display: block; margin: 0 auto; }
+    h1 { font-size: clamp(28px, 4.6vw, 44px); line-height: 1.15; margin: 34px 0 12px; letter-spacing: -0.5px; }
+    .lede { color: var(--text-2); font-size: 18px; max-width: 720px; margin: 0 auto 26px; }
+    .install {
+      display: inline-flex; align-items: center; gap: 14px; background: var(--surface); border: 1px solid var(--line-2);
+      border-radius: 12px; padding: 10px 10px 10px 18px; font: 15px var(--mono); color: var(--text);
+    }
+    .install .prompt { color: var(--text-3); }
+    .install button {
+      font: 600 12px var(--mono); letter-spacing: 1px; color: var(--steel); background: rgba(127, 156, 191, 0.1);
+      border: 1px solid rgba(127, 156, 191, 0.45); border-radius: 8px; padding: 7px 12px; cursor: pointer;
+    }
+    .install button:hover { background: rgba(127, 156, 191, 0.18); }
+    .cta { margin-top: 18px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .cta a { border: 1px solid var(--line-2); border-radius: 10px; padding: 9px 16px; color: var(--text-2); font-size: 14px; }
+    .cta a:hover { color: var(--text); border-color: var(--steel); text-decoration: none; }
+    section { padding: 44px 0; border-top: 1px solid var(--line); }
+    h2 { font-size: 26px; margin: 0 0 8px; letter-spacing: -0.2px; }
+    .kicker { font: 700 11px var(--mono); letter-spacing: 2.5px; color: var(--steel); text-transform: uppercase; margin-bottom: 6px; }
+    p.sub { color: var(--text-2); margin: 0 0 26px; max-width: 760px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+    .card img { width: 44px; height: 44px; display: block; margin-bottom: 10px; }
+    .card h3 { font-size: 16px; margin: 0 0 6px; }
+    .card p { color: var(--text-2); font-size: 14px; margin: 0; }
+    figure { margin: 0 0 22px; }
+    figure img { width: 100%; height: auto; display: block; border-radius: 12px; }
+    figcaption { color: var(--text-3); font-size: 13px; margin-top: 8px; text-align: center; }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    @media (max-width: 760px) { .two { grid-template-columns: 1fr; } nav .links { display: none; } }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { color: var(--text-3); font: 700 11px var(--mono); letter-spacing: 1.5px; text-transform: uppercase; }
+    td code, p code { font: 13px var(--mono); color: var(--text); background: var(--tile); border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; }
+    .table-wrap { overflow-x: auto; }
+    footer { border-top: 1px solid var(--line); padding: 30px 0 46px; color: var(--text-3); font-size: 13px; text-align: center; }
+    footer a { color: var(--text-2); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav aria-label="Main">
+      <span class="brand">HAUL</span>
+      <span class="links">
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#safety">Safety</a>
+        <a href="https://github.com/Arman-Manteghi/Haul#readme">Docs</a>
+        <a href="https://pypi.org/project/haul-scanner/">PyPI</a>
+      </span>
+    </nav>
+
+    <header class="hero">
+      <img class="banner" src="assets/banner.svg" width="920" height="300" alt="Haul: credential exposure scanner for developer machines">
+      <h1>What would an infostealer find on your machine?</h1>
+      <p class="lede">Haul finds every API key, token, SSH key and password lying where stealer malware looks first,
+        including your AI coding tools' chat history, scores how exposed each one is, and tells you exactly how to fix it.
+        It never reads a secret out.</p>
+      <div class="install" role="group" aria-label="Install command">
+        <span><span class="prompt">$</span> pip install haul-scanner</span>
+        <button type="button" id="copy" aria-label="Copy the install command">COPY</button>
+      </div>
+      <div class="cta">
+        <a href="https://github.com/Arman-Manteghi/Haul#readme">Read the docs</a>
+        <a href="https://github.com/Arman-Manteghi/Haul/releases">Release notes</a>
+        <a href="https://pypi.org/project/haul-scanner/">View on PyPI</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="features" aria-labelledby="features-title">
+        <div class="kicker">What you get</div>
+        <h2 id="features-title">Everything a stealer would look for, in one read-only pass</h2>
+        <p class="sub">Most secret scanners look at repositories. Haul looks at your machine: the home folder, project folders,
+          app-data stores and AI-tool transcripts that never reach a repo but sit on disk, readable by anything you run.</p>
+        <div class="grid">
+          <article class="card"><img src="assets/icons/scanners.svg" alt=""><h3>Nine scanners, one pass</h3><p>Cloud and package CLIs, SSH keys, .env files, shell and PowerShell history, environment variables, browsers, desktop apps and sensitive files.</p></article>
+          <article class="card"><img src="assets/icons/ai.svg" alt=""><h3>AI-history aware</h3><p>Claude Code, Cursor, Copilot, Windsurf, Codex, Gemini CLI and more, with transcripts streamed and SQLite chat stores read read-only.</p></article>
+          <article class="card"><img src="assets/icons/git.svg" alt=""><h3>Git aware</h3><p>Knows whether a .env is ignored, not ignored, or already committed, by reading .git directly. Git is never executed.</p></article>
+          <article class="card"><img src="assets/icons/scoring.svg" alt=""><h3>Real risk, not noise</h3><p>58 provider rules, heuristics for assignments, YAML, JSON and XML, strict false-positive filters and a 0–100 exposure score.</p></article>
+          <article class="card"><img src="assets/icons/sealed.svg" alt=""><h3>Never discloses a value</h3><p>Secrets are sealed in memory the moment they're found. Reports carry only a non-reversible fingerprint.</p></article>
+          <article class="card"><img src="assets/icons/network.svg" alt=""><h3>Zero network, zero dependencies</h3><p>An irreversible audit hook blocks sockets, DNS and subprocesses. Pure standard library, so there is no supply chain to attack.</p></article>
+          <article class="card"><img src="assets/icons/reports.svg" alt=""><h3>Five report formats</h3><p>A worst-first terminal view with clickable paths, a self-contained HTML report, plus JSON, CSV and SARIF 2.1.0.</p></article>
+          <article class="card"><img src="assets/icons/clean.svg" alt=""><h3>Clean up AI history</h3><p>An opt-in, byte-exact redactor removes leaked keys from AI-chat transcripts, with a backup first and a dry run by default.</p></article>
+        </div>
+      </section>
+
+      <section aria-labelledby="see-title">
+        <div class="kicker">See it</div>
+        <h2 id="see-title">Worst first, one fix per problem</h2>
+        <p class="sub">Every finding names its kind, what it is and where it lives. Paths are clickable, and each fix appears once.</p>
+        <figure><img src="assets/terminal-report.svg" alt="Haul terminal report with Critical, High and Medium findings" loading="lazy"><figcaption>The terminal report, captured on a demo profile of fabricated secrets.</figcaption></figure>
+        <figure><img src="assets/html-report.png" alt="Haul HTML report with search and severity filters" loading="lazy"><figcaption>The self-contained HTML report: search, filters, no external assets.</figcaption></figure>
+      </section>
+
+      <section id="how" aria-labelledby="how-title">
+        <div class="kicker">How it works</div>
+        <h2 id="how-title">Detect in memory, report only what's safe</h2>
+        <p class="sub">Provider rules run first, heuristics second, then strict filters. Anything real is sealed; only a fingerprint moves on.</p>
+        <figure><img src="assets/pipeline.svg" alt="Haul pipeline: read, provider rules, heuristics, filters, seal, mask, score, firewall, report" loading="lazy"></figure>
+        <figure><img src="assets/scoring.svg" alt="Haul scoring scale from Info to Critical with exposure modifiers" loading="lazy"></figure>
+      </section>
+
+      <section id="safety" aria-labelledby="safety-title">
+        <div class="kicker">Safety model</div>
+        <h2 id="safety-title">Built so it can never become a stealer</h2>
+        <p class="sub">Each layer would stop a leak on its own. Together they make disclosure a build failure, not a runtime hope.</p>
+        <figure><img src="assets/safety.svg" alt="Haul safety layers: build gates, network kill-switch, output firewall, finding, masking, SecretValue" loading="lazy"></figure>
+      </section>
+
+      <section aria-labelledby="start-title">
+        <div class="kicker">Quick start</div>
+        <h2 id="start-title">Install once, run as yourself</h2>
+        <p class="sub">Haul needs Python 3.11 or newer and nothing else. It runs on Windows and Linux.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Run this</th><th>To get</th></tr></thead>
+            <tbody>
+              <tr><td><code>haul</code></td><td>The full scan, worst findings first</td></tr>
+              <tr><td><code>haul --min-severity high</code></td><td>Only what matters most</td></tr>
+              <tr><td><code>haul -f html -o haul-report.html</code></td><td>A shareable HTML report</td></tr>
+              <tr><td><code>haul --only ai-tools</code></td><td>Just your AI coding tools</td></tr>
+              <tr><td><code>haul -f sarif -o haul.sarif --fail-on high</code></td><td>A CI gate with SARIF for code scanning</td></tr>
+              <tr><td><code>haul --clean</code></td><td>A dry run of redacting secrets from AI-chat history</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      Haul is free to use, not open source · <a href="https://github.com/Arman-Manteghi/Haul/blob/main/LICENSE">License</a> ·
+      <a href="https://github.com/Arman-Manteghi/Haul/blob/main/SECURITY.md">Security</a> ·
+      <a href="https://github.com/Arman-Manteghi/Haul/blob/main/CHANGELOG.md">Changelog</a><br>
+      Built by <a href="https://github.com/Arman-Manteghi">Arman Manteghi</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("copy").addEventListener("click", async (event) => {
+      const button = event.currentTarget;
+      try {
+        await navigator.clipboard.writeText("pip install haul-scanner");
+        button.textContent = "COPIED";
+      } catch {
+        button.textContent = "SELECT IT";
+      }
+      setTimeout(() => { button.textContent = "COPY"; }, 1600);
+    });
+  </script>
+</body>
+</html>

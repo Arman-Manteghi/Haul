@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use Haul in your work, please cite it as below."
+title: "Haul: a read-only credential exposure scanner for developer machines"
+type: software
+authors:
+  - family-names: Manteghi
+    given-names: Arman
+version: 0.2.0
+date-released: 2026-10-19
+url: "https://github.com/Arman-Manteghi/Haul"
+keywords:
+  - security
+  - secret scanning
+  - credential exposure
+  - infostealer
+  - devsecops

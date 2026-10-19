@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://arman-manteghi.github.io/Haul/sitemap.xml

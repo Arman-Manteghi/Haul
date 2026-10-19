@@ -1,0 +1,50 @@
+Haul License: free to use, all rights reserved
+
+Copyright (c) 2026 Arman Manteghi. All rights reserved.
+
+Haul ("the Software") is proprietary software. It is free of charge, but it is
+not open source. By installing or using the Software you agree to these terms.
+
+1. Permission to use
+   You may download, install, and run the Software free of charge, for
+   personal, educational, or commercial purposes, on systems you own or are
+   explicitly authorized to assess.
+
+2. Restrictions
+   Except as expressly permitted above, you may not:
+   (a) copy, modify, adapt, translate, or create derivative works of the
+       Software or any part of it;
+   (b) redistribute, publish, sell, rent, lease, or sublicense the Software or
+       any part of it, including its source files;
+   (c) remove or alter any copyright, license, or attribution notice;
+   (d) use the Software to access systems or data you are not authorized to
+       assess.
+   Reverse engineering is not permitted, except to the extent that applicable
+   law expressly allows it notwithstanding this restriction.
+
+3. Official distribution
+   The Software is distributed through PyPI (package "haul-scanner") and
+   https://github.com/Arman-Manteghi/Haul. Organizations may keep the
+   unmodified package in internal package mirrors for their own use.
+
+4. Ownership
+   The Software is licensed, not sold. All rights not expressly granted in this
+   license are reserved by the copyright holder.
+
+5. Termination
+   This license ends automatically if you breach any of its terms. On
+   termination you must stop using the Software and delete all copies of it.
+
+6. No warranty
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+7. Limitation of liability
+   IN NO EVENT SHALL THE AUTHOR OR COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM,
+   DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+   OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+   OR OTHER DEALINGS IN THE SOFTWARE.
+
+For permissions beyond this license, contact the author:
+https://github.com/Arman-Manteghi

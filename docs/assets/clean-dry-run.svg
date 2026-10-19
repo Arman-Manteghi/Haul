@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 613 188" width="613" height="188" role="img" aria-label="haul --clean">
+<rect x="0.5" y="0.5" width="612" height="187" rx="12" fill="#0d0e11" stroke="#2a2d34"/>
+<path d="M0.5 40 L0.5 12.5 A12 12 0 0 1 12.5 0.5 L600.9 0.5 A12 12 0 0 1 612.9 12.5 L612.9 40 Z" fill="#15171c"/>
+<line x1="0" y1="40" x2="613" y2="40" stroke="#2a2d34"/>
+<circle cx="24" cy="20" r="6" fill="#55595f"/>
+<circle cx="46" cy="20" r="6" fill="#44484e"/>
+<circle cx="68" cy="20" r="6" fill="#33373d"/>
+<text x="307" y="25" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="12" fill="#8b9099">haul --clean</text>
+<text y="70.0" xml:space="preserve" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="13"><tspan x="22.0" textLength="7.8" lengthAdjust="spacing" fill="#808080">$</tspan><tspan x="37.6" textLength="93.6" lengthAdjust="spacing" fill="#d4d6db" font-weight="700">haul --clean</tspan></text>
+<text y="89.0" xml:space="preserve" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="13"><tspan x="22.0" textLength="546.0" lengthAdjust="spacing" fill="#d4d6db">haul --clean (DRY RUN) -- these AI-tool history files contain secrets:</tspan></text>
+<text y="108.0" xml:space="preserve" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="13"><tspan x="22.0" textLength="382.2" lengthAdjust="spacing" fill="#d4d6db">  ~\.claude\projects\p1\chat.jsonl  (3 secret(s))</tspan></text>
+<text y="146.0" xml:space="preserve" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="13"><tspan x="22.0" textLength="569.4" lengthAdjust="spacing" fill="#d4d6db">Re-run with `--clean --apply` to redact them (a backup is written first).</tspan></text>
+<text y="165.0" xml:space="preserve" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="13"><tspan x="22.0" textLength="546.0" lengthAdjust="spacing" fill="#d4d6db">Values are never printed; each is replaced by a non-reversible marker.</tspan></text>
+</svg>
