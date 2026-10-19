@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/banner.svg" alt="Haul: credential exposure scanner for developer machines" width="900">
+  <img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/banner.svg?v=0.2.0" alt="Haul: credential exposure scanner for developer machines" width="900">
 </h1>
 
 <h3 align="center">If an infostealer ran on your machine right now, what would it take?</h3>
@@ -59,48 +59,48 @@ anything you run. It reports, ranks and explains. It never takes.
 <table>
   <tr>
     <td width="50%" valign="top">
-      <img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/icons/scanners.svg" width="46" align="left" alt="">
+      <img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/icons/scanners.svg?v=0.2.0" width="46" align="left" alt="">
       <b>Nine scanners, one pass</b><br>
       <sub>Cloud &amp; package CLIs, SSH keys, <code>.env</code> files, shell &amp; PowerShell history, environment variables, 12 AI coding tools, browsers, desktop apps and sensitive files.</sub>
     </td>
     <td width="50%" valign="top">
-      <img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/icons/ai.svg" width="46" align="left" alt="">
+      <img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/icons/ai.svg?v=0.2.0" width="46" align="left" alt="">
       <b>AI-history aware</b><br>
       <sub>Claude Code, Cursor, Copilot, Windsurf, Codex, Gemini CLI and more. Streams transcripts of any size and reads SQLite chat stores read-only. A key echoed 500× is one finding.</sub>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/icons/git.svg" width="46" align="left" alt="">
+      <img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/icons/git.svg?v=0.2.0" width="46" align="left" alt="">
       <b>Git aware</b><br>
       <sub>Knows whether a <code>.env</code> is ignored, <i>not</i> ignored, or already <b>committed</b>, by reading <code>.git</code> directly. Git is never executed.</sub>
     </td>
     <td width="50%" valign="top">
-      <img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/icons/scoring.svg" width="46" align="left" alt="">
+      <img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/icons/scoring.svg?v=0.2.0" width="46" align="left" alt="">
       <b>Real risk, not noise</b><br>
       <sub>58 provider rules plus assignment, YAML, JSON and XML heuristics. Aggressive false-positive filtering, and a 0–100 exposure score for every finding.</sub>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/icons/sealed.svg" width="46" align="left" alt="">
+      <img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/icons/sealed.svg?v=0.2.0" width="46" align="left" alt="">
       <b>Never discloses a value</b><br>
       <sub>Secrets are sealed in memory the moment they are found. Reports carry only a non-reversible fingerprint, and an output firewall double-checks every byte.</sub>
     </td>
     <td width="50%" valign="top">
-      <img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/icons/network.svg" width="46" align="left" alt="">
+      <img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/icons/network.svg?v=0.2.0" width="46" align="left" alt="">
       <b>Zero network, zero dependencies</b><br>
       <sub>An irreversible audit hook blocks sockets, DNS and subprocesses for the whole run. Pure standard library, so there is no supply chain to attack.</sub>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/icons/reports.svg" width="46" align="left" alt="">
+      <img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/icons/reports.svg?v=0.2.0" width="46" align="left" alt="">
       <b>Reports people actually read</b><br>
       <sub>A worst-first terminal view with clickable paths, a self-contained HTML report, plus JSON, CSV and SARIF 2.1.0.</sub>
     </td>
     <td width="50%" valign="top">
-      <img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/icons/ci.svg" width="46" align="left" alt="">
+      <img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/icons/ci.svg?v=0.2.0" width="46" align="left" alt="">
       <b>Built for CI</b><br>
       <sub>Exit codes by severity, <code>--fail-on</code>, baselines that survive edits, and SARIF that maps straight onto your repository's files.</sub>
     </td>
@@ -112,23 +112,23 @@ anything you run. It reports, ranks and explains. It never takes.
 Run `haul` and it walks your machine once. The live progress bar keeps moving even through hundreds of
 megabytes of AI transcripts.
 
-<p align="center"><img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/startup.svg" alt="Haul starting: the banner and the live progress bar" width="640"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/startup.svg?v=0.2.0" alt="Haul starting: the banner and the live progress bar" width="640"></p>
 
 The report is **worst first**. Every finding names its kind (`API KEY`, `TOKEN`, `PRIVATE KEY`,
 `PASSWORD`…), what it is and where it lives. Paths are **clickable** in modern terminals, and each fix
 appears **once**, numbered, under *What to do*.
 
-<p align="center"><img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/terminal-report.svg" alt="Haul terminal report, worst findings first" width="840"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/terminal-report.svg?v=0.2.0" alt="Haul terminal report, worst findings first" width="840"></p>
 
 Need to hand it to someone? `haul -f html -o report.html` writes **one self-contained file** with live
 search, severity filters and the same fixes. It needs no internet and loads nothing external.
 
-<p align="center"><img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/html-report.png" alt="Haul HTML report with search and severity filters" width="840"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/html-report.png?v=0.2.0" alt="Haul HTML report with search and severity filters" width="840"></p>
 
 <details>
 <summary><b>The HTML report filtered to one severity</b></summary>
 <br>
-<p align="center"><img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/html-report-filter.png" alt="Haul HTML report filtered to High findings" width="840"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/html-report-filter.png?v=0.2.0" alt="Haul HTML report filtered to High findings" width="840"></p>
 </details>
 
 <sub>Every screenshot is real Haul output, captured on a demo profile seeded with fabricated secrets.</sub>
@@ -164,7 +164,7 @@ uv tool install haul-scanner
 
 ## What it scans
 
-<p align="center"><img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/scanners.svg" alt="haul --list-scanners output" width="840"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/scanners.svg?v=0.2.0" alt="haul --list-scanners output" width="840"></p>
 
 | Scanner | What it covers |
 |---|---|
@@ -184,7 +184,7 @@ a scan can never trigger a download.
 
 ## How it works
 
-<p align="center"><img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/pipeline.svg" alt="Haul's pipeline: read, provider rules, heuristics, filters, seal, then mask, score, firewall, report" width="900"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/pipeline.svg?v=0.2.0" alt="Haul's pipeline: read, provider rules, heuristics, filters, seal, then mask, score, firewall, report" width="900"></p>
 
 - **Specific beats generic.** Provider rules run first and claim their match, so an Anthropic key is
   reported once as Anthropic, never again as "OpenAI-shaped". Literal prefilters skip rules that can't
@@ -201,7 +201,7 @@ a scan can never trigger a download.
 
 ## Severity and scoring
 
-<p align="center"><img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/scoring.svg" alt="Haul scoring: base severity plus exposure modifiers, mapped to Info, Low, Medium, High and Critical" width="900"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/scoring.svg?v=0.2.0" alt="Haul scoring: base severity plus exposure modifiers, mapped to Info, Low, Medium, High and Critical" width="900"></p>
 
 Every finding gets a **0–100 score**: a base severity, moved by how exposed the secret really is. The bands
 are **≥ 85 Critical**, **≥ 65 High**, **≥ 40 Medium** and **≥ 20 Low**; anything lower is Info. The worst
@@ -291,7 +291,7 @@ haul -f terminal -f html -f json -f csv -f sarif -o ./reports
 <details>
 <summary><b>The full <code>haul --help</code></b></summary>
 <br>
-<p align="center"><img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/help.svg" alt="haul --help output" width="780"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/help.svg?v=0.2.0" alt="haul --help output" width="780"></p>
 </details>
 
 ## Use it in CI
@@ -333,7 +333,7 @@ haul --baseline baseline.json        # from now on, only new findings
 A key pasted into an AI chat stays in its transcript for good. `--clean` removes it. This is the **only**
 mode that writes to disk, and it is deliberately careful:
 
-<p align="center"><img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/clean-dry-run.svg" alt="haul --clean dry run" width="640"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/clean-dry-run.svg?v=0.2.0" alt="haul --clean dry run" width="640"></p>
 
 - **A dry run by default.** It lists what would change. Rewriting needs `--apply`, then typing `redact` (or `--yes`).
 - **History only.** It never touches configs, a tool's own login file (that would log you out) or SQLite stores, and only works on regular files you own inside your home.
@@ -349,7 +349,7 @@ mode that writes to disk, and it is deliberately careful:
 A tool that knows where every secret lives must be impossible to turn into a stealer. Haul enforces that in
 layers, each of which would stop a leak on its own:
 
-<p align="center"><img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/safety.svg" alt="Haul safety layers around the sealed SecretValue" width="900"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/safety.svg?v=0.2.0" alt="Haul safety layers around the sealed SecretValue" width="900"></p>
 
 | Layer | Guarantee |
 |---|---|
@@ -366,7 +366,7 @@ The full threat model, and its honest limits, is in **[SECURITY.md](https://gith
 
 One focused package, written against the standard library only and fully typed. Each layer has a single job:
 
-<p align="center"><img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/architecture.svg" alt="Haul package layout: interface, engine, detection, scanners, safety and remediation layers" width="900"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/architecture.svg?v=0.2.0" alt="Haul package layout: interface, engine, detection, scanners, safety and remediation layers" width="900"></p>
 
 ## Plugins
 
@@ -501,7 +501,7 @@ The binding text is in **[LICENSE](https://github.com/Arman-Manteghi/Haul/blob/m
 <br>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/icons/sealed.svg" width="30" alt=""><br>
+  <img src="https://raw.githubusercontent.com/Arman-Manteghi/Haul/main/docs/assets/icons/sealed.svg?v=0.2.0" width="30" alt=""><br>
   <sub>Built by <a href="https://github.com/Arman-Manteghi"><b>Arman Manteghi</b></a></sub><br>
   <sub>Read-only · zero network · zero dependencies · no secret ever leaves the process</sub>
 </p>
