@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="https://pypi.org/project/haul-scanner/"><img alt="PyPI" src="https://img.shields.io/pypi/v/haul-scanner?style=flat-square&label=pypi&labelColor=11151c&color=3d5a7a"></a>
+  <a href="https://pypi.org/project/haul-scanner/"><img alt="PyPI" src="https://img.shields.io/pypi/v/haul-scanner?style=flat-square&label=pypi&labelColor=11151c&color=3d5a7a&cacheSeconds=3600"></a>
   <img alt="Python 3.11 to 3.14" src="https://img.shields.io/badge/python-3.11%20%E2%80%93%203.14-4a5568?style=flat-square&labelColor=11151c">
   <img alt="Windows and Linux" src="https://img.shields.io/badge/platform-windows%20%C2%B7%20linux-3f6b66?style=flat-square&labelColor=11151c">
   <img alt="Zero runtime dependencies" src="https://img.shields.io/badge/dependencies-0-5b4f73?style=flat-square&labelColor=11151c">
