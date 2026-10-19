@@ -153,6 +153,12 @@ uv tool install haul-scanner
 ```
 </details>
 
+Already installed? Upgrade to the latest release with:
+
+```bash
+pip install --upgrade haul-scanner
+```
+
 | Run this | To get |
 |---|---|
 | `haul` | The full scan: terminal report, worst first |
